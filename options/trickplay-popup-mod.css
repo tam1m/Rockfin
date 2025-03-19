@@ -1,0 +1,39 @@
+/* mod text inside popup for chapter and time */
+.chapterThumbTextContainer {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    right: auto;
+    bottom: 4px;
+    left: 4px;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0 0 1.9vh #000;
+    /* stack vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 240px;
+}
+
+/* display title above time */
+.chapterThumbText {
+    font-size: 1.1em;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.chapterThumbText:empty {
+    display: none;
+}
+
+.chapterThumbTextContainer:has(.chapterThumbText:empty) {
+    height: auto;
+}
