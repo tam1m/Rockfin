@@ -25,23 +25,22 @@ t-   timings
 	--t-quick: 120ms;
 	--t-average: 240ms;
 	--t-slow: 360ms;
-	
+
 	--o-light: 40%;
 	--o-medium: 65%;
 	--o-heavy: 80%;
 	--o-background: 91%;
 	--o-darken: 70%;
-	
-	--hsl-background: 0, 0%, 3%;
-	--hsl-active: 278, 45%, 57%;
-	--hsl-accent: 70, 65%, 38%;
-	--hsl-complementary: 310, 65%, 65%;
-	--hsl-foreground-stark: 0, 0%, 0%;
-	--hsl-foreground: 70, 30%, 9%;
-	--hsl-foreground: 310, 30%, 15%;
-	--hsl-border: 0, 0%, 3%;
-	--hsl-text: 0, 0%, 84%;
-	--hsl-darken: 0, 0%, 0%;
+
+	--hsl-background: 220, 18%, 1%;
+	--hsl-active: 260, 45%, 45%;
+	--hsl-accent: 190, 65%, 45%;
+	--hsl-complementary: 240, 40%, 40%;
+	--hsl-foreground-stark: 220, 25%, 2%;
+	--hsl-foreground: 220, 18%, 5%;
+	--hsl-border: 220, 15%, 8%;
+	--hsl-text: 220, 15%, 85%;
+	--hsl-darken: 220, 30%, 0%;
 	--c-background: hsl(var(--hsl-background));
 	--c-active: hsl(var(--hsl-active));
 	--c-accent: hsl(var(--hsl-accent));
@@ -51,18 +50,18 @@ t-   timings
 	--c-text: hsl(var(--hsl-text));
 	--c-border: hsl(var(--hsl-border));
 	--c-darken: hsl(var(--hsl-darken));
-	--g-background: linear-gradient(-15deg, #0006, #1c1c1c66), radial-gradient(circle at 20% -30%, hsla(150deg, 70%, 50%, 10%), hsla(270deg, 70%, 50%, 15%));
+	--g-background: linear-gradient(145deg, hsl(220, 18%, 0%), hsl(220, 18%, 2%)), radial-gradient(circle at 20% -20%,hsla(190, 65%, 45%, 0.1), hsla(260, 45%, 45%, 0.15));
 	--g-page: 
-		linear-gradient(-15deg, hsla(var(--hsl-background), var(--o-light)), hsla(var(--hsl-background), var(--o-heavy))),
-		radial-gradient(circle at 34% -30%, hsla(var(--hsl-accent), var(--o-medium)), hsla(var(--hsl-complementary), var(--o-medium))),
-		radial-gradient(circle at 90% 110%, hsla(var(--hsl-accent), var(--o-medium)), hsla(var(--hsl-complementary), var(--o-heavy)));
-	
+		linear-gradient(145deg, hsla(var(--hsl-background), var(--o-heavy)), hsla(var(--hsl-background), var(--o-heavy))), 
+		radial-gradient(circle at 30% -25%, hsla(var(--hsl-accent), 0.2), hsla(var(--hsl-complementary), 0.25)),
+		radial-gradient(circle at 85% 115%, hsla(var(--hsl-active), 0.1), hsla(var(--hsl-background), 0.98));
+
 	--r-factor: 1;
 	--r-small: calc(.3rem * var(--r-factor));
 	--r-medium: calc(.6rem * var(--r-factor));
 	--r-large: calc(1rem * var(--r-factor));
 	--r-round: calc(9999px * var(--r-factor));
-	
+
 	--s-page-pad: calc(1vw + 3rem);
 	--s-sidebar-allowance: 5rem;
 
