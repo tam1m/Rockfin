@@ -1,0 +1,67 @@
+/* Adjusted Card Sizes */
+:root {
+    --card-width-xs: min(40vw, 160px);
+    --card-width-sm: min(30vw, 150px);
+    --card-width-md: min(24vw, 140px);
+    --card-width-lg: min(18vw, 130px);
+    --card-width-xl: min(14vw, 120px);
+    --card-width-xxl: min(10vw, 110px);
+}
+
+.card:is([data-mediatype]) {
+    width: var(--card-width-xs) !important;
+}
+
+.card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+    width: calc(var(--card-width-xs) * 2) !important;
+}
+
+@media (min-width: 600px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-sm) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-sm) * 2) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-md) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-md) * 2) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-lg) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-lg) * 2) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-xl) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-xl) * 2) !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-xxl) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-xxl) * 2) !important;
+    }
+}
