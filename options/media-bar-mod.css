@@ -1,0 +1,27 @@
+/* Media Bar Plugin */
+/* 
+@media only screen and (min-width: 767px) {
+  #slides-container {
+      width: 90%;
+      border-radius: unset;
+  }
+} 
+*/
+
+/* Rockfin skin only. otherwise use above */
+@media only screen and (min-width: 767px) {
+	#slides-container {
+		/* adjust width based on collapsed sidebar */
+		width: calc(100% - 50px);
+		margin-left: 50px;
+		border-radius: unset;
+	}
+}
+
+.arrow {
+	height: inherit;
+}
+
+.arrow::before {
+	background-color: transparent;
+}
