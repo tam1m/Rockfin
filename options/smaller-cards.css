@@ -1,11 +1,11 @@
 /* Adjusted Card Sizes */
 :root {
-    --card-width-xs: min(40vw, 160px);
-    --card-width-sm: min(30vw, 150px);
-    --card-width-md: min(24vw, 140px);
-    --card-width-lg: min(18vw, 130px);
-    --card-width-xl: min(14vw, 120px);
-    --card-width-xxl: min(10vw, 110px);
+    --card-width-xs: min(50vw, 200px);
+    --card-width-sm: min(38vw, 190px);
+    --card-width-md: min(30vw, 180px);
+    --card-width-lg: min(23vw, 170px);
+    --card-width-xl: min(18vw, 150px);
+    --card-width-xxl: min(13vw, 130px);
 }
 
 .card:is([data-mediatype]) {
