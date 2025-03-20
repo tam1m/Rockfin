@@ -56,7 +56,7 @@ t-   timings
 		radial-gradient(circle at 30% -25%, hsla(var(--hsl-accent), 0.2), hsla(var(--hsl-complementary), 0.25)),
 		radial-gradient(circle at 85% 115%, hsla(var(--hsl-active), 0.1), hsla(var(--hsl-background), 0.98));
 
-	--r-factor: 1;
+	--r-factor: 0.5;
 	--r-small: calc(.3rem * var(--r-factor));
 	--r-medium: calc(.6rem * var(--r-factor));
 	--r-large: calc(1rem * var(--r-factor));
