@@ -1862,6 +1862,10 @@ DASHBOARD
 	font-size: .875em;
 }
 
+.MuiDrawer-paper {
+	background-color: var(--c-foreground);
+	color: var(--c-text);
+}
 
 /* ==-Metadata-Menus-======================================================= */
 
