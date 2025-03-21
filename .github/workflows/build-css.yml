@@ -34,8 +34,8 @@ jobs:
 
       - name: Process CSS (Minify)
         run: |
-          npx postcss dist/recommended.css --use postcss-import postcss-import-url autoprefixer cssnano -o dist/recommended.min.css
-          npx postcss dist/full.css --use postcss-import postcss-import-url autoprefixer cssnano -o dist/full.min.css
+          npx postcss dist/recommended.css --no-map --use postcss-import postcss-import-url autoprefixer cssnano -o dist/recommended.min.css
+          npx postcss dist/full.css --no-map --use postcss-import postcss-import-url autoprefixer cssnano -o dist/full.min.css
 
       - name: Commit and push all changes
         run: |
