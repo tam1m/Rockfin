@@ -1,14 +1,5 @@
 /* Media Bar Plugin */
-/* 
-@media only screen and (min-width: 767px) {
-  #slides-container {
-      width: 90%;
-      border-radius: unset;
-  }
-} 
-*/
 
-/* Rockfin skin only. otherwise use above */
 @media only screen and (min-width: 767px) {
 	#slides-container {
 		/* adjust width based on collapsed sidebar */
@@ -17,24 +8,24 @@
 	}
 }
 
-
-.detail-button {
-	background-color: var(--c-foreground-stark);
-	color: var(--c-text);
+.slide>.button-container>.detail-button {
+	background-color: var(--c-foreground-stark) !important;
 }
 
-.play-button {
-	background-color: var(--c-foreground);
-	color: var(--c-text);
+.slide>.button-container>.play-button {
+	background-color: var(--c-foreground) !important;
 }
 
-.play-button,
-.detail-button {
-	/* border: solid 1px var(--c-border); */
-	border: none;
+.slide>.button-container>.play-button,
+.slide>.button-container>.detail-button {
+	color: var(--c-text) !important;
+	border: solid 1px var(--c-border);
 	border-radius: var(--r-medium);
 	font-size: 14px;
-	cursor: pointer;
 	transition: all 0.3s ease;
-	-webkit-tap-highlight-color: var(--hsl-active);
+}
+
+.slide>.button-container>.play-button:after,
+.slide>.button-container>.detail-button:after {
+	display: none;
 }
