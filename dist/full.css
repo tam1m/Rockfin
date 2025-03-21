@@ -1,0 +1,2244 @@
+/* recommended jellyfin rounded icons */
+
+@import url("https://cdn.jsdelivr.net/gh/prayag17/Jellyfin-Icons/round.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* material icons reference https://fonts.google.com/icons?selected=Material+Icons */
+
+
+/* VARIABLES *\
+
+Prefix meanings:
+c-   colour
+e-   ease functions
+f-   font
+g-   gradient
+hsl- raw hsl value
+i-   image
+o-   opacity
+r-   rounding
+s-   size
+t-   timings
+*/
+
+:root {
+	--t-quick: 120ms;
+	--t-average: 240ms;
+	--t-slow: 360ms;
+
+	--o-light: 40%;
+	--o-medium: 65%;
+	--o-heavy: 80%;
+	--o-background: 91%;
+	--o-darken: 70%;
+
+	--hsl-background: 220, 18%, 1%;
+	--hsl-active: 260, 45%, 45%;
+	--hsl-accent: 190, 65%, 45%;
+	--hsl-complementary: 240, 40%, 40%;
+	--hsl-foreground-stark: 220, 25%, 2%;
+	--hsl-foreground: 220, 18%, 5%;
+	--hsl-border: 220, 15%, 8%;
+	--hsl-text: 220, 15%, 85%;
+	--hsl-darken: 220, 30%, 0%;
+	--c-background: hsl(var(--hsl-background));
+	--c-active: hsl(var(--hsl-active));
+	--c-accent: hsl(var(--hsl-accent));
+	--c-complementary: hsl(var(--hsl-complementary));
+	--c-foreground-stark: hsl(var(--hsl-foreground-stark));
+	--c-foreground: hsl(var(--hsl-foreground));
+	--c-text: hsl(var(--hsl-text));
+	--c-border: hsl(var(--hsl-border));
+	--c-darken: hsl(var(--hsl-darken));
+	--g-background: linear-gradient(145deg, hsl(220, 18%, 0%), hsl(220, 18%, 2%)), radial-gradient(circle at 20% -20%,hsla(190, 65%, 45%, 0.1), hsla(260, 45%, 45%, 0.15));
+	--g-page: 
+		linear-gradient(145deg, hsla(var(--hsl-background), var(--o-heavy)), hsla(var(--hsl-background), var(--o-heavy))), 
+		radial-gradient(circle at 30% -25%, hsla(var(--hsl-accent), 0.2), hsla(var(--hsl-complementary), 0.25)),
+		radial-gradient(circle at 85% 115%, hsla(var(--hsl-active), 0.1), hsla(var(--hsl-background), 0.98));
+
+	--r-factor: 0.5;
+	--r-small: calc(.3rem * var(--r-factor));
+	--r-medium: calc(.6rem * var(--r-factor));
+	--r-large: calc(1rem * var(--r-factor));
+	--r-round: calc(9999px * var(--r-factor));
+
+	--s-page-pad: calc(1vw + 3rem);
+	--s-sidebar-allowance: 5rem;
+
+	--f-default: Noto Sans,Noto Sans HK,Noto Sans JP,Noto Sans KR,Noto Sans SC,Noto Sans TC,sans-serif;
+	--f-icon: 'Material Icons Round';
+}
+.layout-mobile {
+	--s-page-pad: 3.3%;
+}
+
+html {
+	font-size: 10px !important;
+}
+
+body {
+	font-size: 1.5em;
+}
+
+.skinHeader, html {
+	color: var(--c-text);
+}
+
+
+/* BASIC ELEMENTS */
+
+.fab, .raised {
+	background: var(--c-foreground-stark);
+	color: var(--c-text);
+}
+.fab {
+	background: var(--c-foreground);
+}
+
+/* Sizings */
+
+.padded-left.padded-left {
+	padding-left: max(env(safe-area-inset-left),var(--s-page-pad))
+}
+.padded-right.padded-right {
+	padding-right: max(env(safe-area-inset-left),var(--s-page-pad))
+}
+
+/* Misc */
+
+.collapseContent,
+.visualCardBox {
+	background: var(--c-foreground-stark);
+}
+
+/* Lists in Dialogs - maybe elsewhere? */
+
+.paperList {
+	background: none;
+	border-radius: var(--r-large) !important;
+	overflow: hidden;
+}
+.paperList .listItem {
+	background: hsla(var(--hsl-foreground), var(--o-medium)) padding-box;
+}
+.paperList .listItem ~ .listItem {
+	border-top: 2px solid transparent;
+}
+
+.listItemIcon[style*="background-color"] {
+	background: var(--c-foreground-stark) !important;
+}
+
+/* Headers */
+
+h2 {
+	font-weight: 900;
+}
+
+/* Scrollers */
+
+.emby-scroller {
+	padding-left: max(env(safe-area-inset-left),var(--s-page-pad));
+	padding-right: max(env(safe-area-inset-right),var(--s-page-pad));
+}
+.layout-mobile .itemDetailPage .emby-scroller {
+	padding-inline: 0;
+}
+
+/* Buttons */
+
+.button-link {
+	color: var(--c-accent);
+}
+
+.emby-button,
+.paper-icon-button-light {
+	transition-duration: var(--t-quick);
+}
+
+.emby-button,
+.cardOverlayButton {
+	border-radius: var(--r-medium);
+}
+
+.emby-tab-button:hover,
+.button-flat:hover {
+	color: var(--c-accent);
+}
+
+.button-submit {
+	background: var(--c-accent);
+}
+
+/* Card Action Buttons */
+
+.cardOverlayButton-br {
+	right: .3rem;
+	bottom: .3rem;
+	gap: .3rem;
+}
+
+.cardOverlayButton {
+	padding: 0;
+}
+.paper-icon-button-light:hover:not(:disabled) {
+	color: var(--c-accent);
+	background-color: hsla(var(--hsl-foreground-stark), var(--o-medium));
+}
+
+/* List Items */
+
+.listItem-border {
+	border-bottom: .1rem solid var(--c-border) !important;
+}
+.listItem-border:not(.listItem-border + .listItem-border) {
+	border-top: .1rem solid var(--c-border) !important;
+}
+
+.layout-desktop .listItemBodyText {
+	margin: 0;
+}
+
+.listItemIcon:not(.listItemIcon-transparent) {
+	background-color: var(--c-accent);
+}
+
+
+/* INPUTS */
+
+/* Checkboxes */
+
+.emby-checkbox:checked + span + .checkboxOutline, .itemProgressBarForeground {
+	background-color: var(--c-accent);
+}
+
+.emby-checkbox:checked + span + .checkboxOutline,
+.emby-checkbox:focus:not(:checked) + span + .checkboxOutline {
+	border-color: var(--c-accent);
+}
+
+/* Fields */
+
+.inputLabelFocused,
+.textareaLabelFocused {
+	color: var(--c-accent);
+}
+
+.emby-input,
+.emby-textarea {
+	background: hsla(var(--hsl-foreground), var(--o-medium));
+/* 	border: none; */
+	border-color: var(--c-foreground);
+}
+
+.emby-input:focus,
+.emby-textarea:focus {
+	border-color: var(--c-accent);
+}
+
+/* Selects */
+
+.selectLabelFocused {
+	color: var(--c-text);
+}
+
+.emby-select-withcolor {
+	background: hsla(var(--hsl-foreground), var(--o-medium));
+/* 	border: none; */
+	border-color: var(--c-foreground);
+	padding-left: .8rem !important;
+	border-radius: var(--r-small);
+}
+
+.emby-select-withcolor > option {
+	background: inherit;
+}
+
+/* Slider */
+
+/* Create a new handle for slider */
+
+/* .mdl-slider {
+	opacity: 0;
+}
+
+.mdl-slider-background-flex {
+	overflow: visible;
+}
+
+.mdl-slider-background-lower::after {
+	content: "";
+	position: absolute;
+	top: calc(50% - 1rem);
+	right: -1rem;
+	width: 2rem;
+	height: 2rem;
+	border-radius: var(--r-round);
+	background: var(--c-accent);
+} */
+
+.mdl-slider::-webkit-slider-thumb {
+	background-color: var(--c-accent) !important;
+}
+.mdl-slider::-moz-range-thumb {
+	background-color: var(--c-accent) !important;
+}
+.mdl-slider::-ms-thumb {
+	background-color: var(--c-accent) !important;
+}
+
+
+/* BACKGROUND */
+
+.backgroundContainer.withBackdrop {
+	background: hsla(var(--hsl-background), var(--o-background));
+}
+
+.backdropImage {
+	filter: blur(10px);
+}
+
+
+/* DIALOGS */
+
+.formDialogFooter:not(.formDialogFooter-clear),
+.formDialogHeader:not(.formDialogHeader-clear) {
+	background: var(--c-foreground-stark);
+}
+
+.dialog {
+	border-radius: var(--r-medium);
+	background: hsla(var(--hsl-foreground-stark), var(--o-heavy)) !important;
+}
+
+.actionSheet h2 {
+	color: var(--c-accent);
+	font-size: 1em;
+	letter-spacing: .03em;
+	text-transform: uppercase;
+}
+
+.actionsheetDivider {
+	margin: 0;
+	height: .3rem;
+	background: var(--c-border);
+	height: 0;
+	border-bottom: .3rem dotted var(--c-border) !important;
+}
+
+.listItem:hover {
+	background-color: hsla(var(--hsl-foreground), var(--o-medium));
+	color: var(--c-accent);
+}
+
+/* Overlays */
+.dialogBackdrop {
+	background: var(--g-page);
+	transition-duration: var(--t-quick) !important;
+}
+.dialogBackdropOpened {
+	opacity: var(--o-heavy);
+}
+.layout-desktop .dialog {
+	animation-duration: 0.01s !important; /* cannot fully remove animation or closing dialogs breaks?..... */
+}
+
+/* Simple Dropdowns */
+
+.actionSheet {
+	border-radius: var(--r-medium) !important;;
+}
+
+.actionSheetContent {
+	padding: 0 !important;
+}
+
+
+
+
+
+.backgroundContainer, .dialog, .nowPlayingPlaylist, .nowPlayingContextMenu, html, .preload {
+	background: var(--c-background);
+}
+
+
+/* HEADER */
+
+/* monochrome logo */
+/* .pageTitleWithLogo {
+	filter: grayscale(1) brightness(3);
+} */
+/* red logo */
+.pageTitleWithDefaultLogo {
+	background: var(--c-accent);
+	-webkit-mask: url(./assets/img/banner-light.png) left center / contain no-repeat;
+	mask: url(./assets/img/banner-light.png) left center / contain no-repeat;
+}
+html:not(:has(script[src^="file:///"])) .pageTitleWithDefaultLogo {
+	-webkit-mask-image: url(./assets/img/banner-light.png);
+	mask-image: url(./assets/img/banner-light.png);
+}
+
+.skinHeader,
+.MuiAppBar-colorPrimary {
+	/* give mobile header a transition */
+	transition: background-color .5s ease-in-out, transform .2s ease-out;
+}
+
+.skinHeader-withBackground,
+.MuiAppBar-positionFixed {
+	background: hsla(var(--hsl-background), var(--o-heavy));
+	backdrop-filter: blur(5px);
+}
+
+
+
+
+
+/* Modify header */
+
+.skinHeader.semiTransparent {
+	backdrop-filter: blur(3px) !important;
+}
+
+
+
+/* SIDEBAR */
+
+.mainDrawerButton,
+.headerHomeButton {
+	display: none;
+}
+
+.navMenuOption.navMenuOption,
+.navMenuOption-selected {
+	padding: 1.2rem 1.5rem !important;
+	margin-inline: 1.5rem !important;
+	border-radius: var(--r-medium) !important;
+	color: var(--c-text);
+}
+.navMenuOption:hover,
+.navMenuOption-selected,
+html:has(#indexPage:not(.hide)) .navMenuOption[href$="/home.html"],
+html:has(.libraryPage:not(.hide) .card[data-type="BoxSet"]) .navMenuOption:has(.folder),
+html:has(.libraryPage:not(.hide) .card[data-type="Playlist"]) .navMenuOption:has(.view_list),
+html:has(#myPreferencesMenuPage:not(.hide)) .navMenuOption[data-itemid="settings"] {
+	background: hsla(var(--hsl-foreground), var(--o-medium)) !important;
+	color: var(--c-accent) !important;
+}
+
+.navMenuOptionIcon.navMenuOptionIcon {
+	width: 2rem;
+	margin-right: 1.5rem;
+}
+
+.mainDrawer {
+	background: hsla(var(--hsl-background), 80%);
+	backdrop-filter: blur(25px);
+}
+
+.layout-desktop .mainDrawer:not(:hover) .navMenuOption {
+	border-radius: 0 !important;
+}
+
+.layout-desktop .libraryDocument:not(.hide-scroll) .skinHeader,
+.layout-desktop .libraryDocument:not(.hide-scroll) .page {
+	left: var(--s-sidebar-allowance);
+}
+
+.layout-desktop .libraryDocument:not(.hide-scroll) .mainDrawer {
+	left: 0 !important;
+	width: 320px !important;
+	background: hsla(var(--hsl-foreground-stark), var(--o-medium));
+	color: rgba(255, 255, 255, 0.8);
+	clip-path: inset(0 calc(100% - 6.5rem) 0 0);
+	transform: translateX(-1.5rem) !important;
+	transition: transform var(--t-quick) ease-out, clip-path var(--t-quick) ease-out !important;
+}
+.layout-desktop .libraryDocument:not(.hide-scroll) .mainDrawer:hover {
+	transform: none !important;
+	clip-path: inset(0 0rem 0 0);
+}
+
+.layout-desktop .libraryDocument:not(.hide-scroll) .sidebarHeader {
+	margin-block: 2rem 1rem;
+	padding-inline: 1.5rem;
+	color: var(--c-accent);
+	font-weight: 900;
+	opacity: 0;
+	transition: opacity 0.12s ease-out;
+}
+.layout-desktop .libraryDocument:not(.hide-scroll) .mainDrawer:hover .sidebarHeader {
+	opacity: 1;
+}
+
+/* move header texts up since they have more space */
+.layout-desktop .headerTabs {
+	width: auto;
+	margin-top: -4.3em;
+	align-self: center;
+}
+
+.layout-mobile .mainDrawer {
+	position: fixed;
+	inset: auto 0 0 !important;
+	width: auto !important;
+	height: 6rem;
+	padding: 0 .6rem;
+	transform: translateY(6rem) !important;
+	transition: transform .15s ease-out;
+}
+.layout-mobile:not(:has(.headroom--unpinned)) .mainDrawer {
+	transform: translateY(0) !important;
+}
+
+.layout-mobile .scrollContainer {
+	display: flex;
+	gap: .6rem;
+	overflow: hidden;
+}
+
+.layout-mobile .libraryMenuOptions {
+	display: flex;
+	flex-flow: row nowrap;
+	max-width: calc(100% - 7.8rem);
+	height: 6rem;
+	gap: .6rem;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.layout-mobile .mainDrawerHandle,
+.layout-mobile .customMenuOptions:empty,
+.layout-mobile .adminMenuOptions,
+.layout-mobile .userMenuOptions,
+.layout-mobile .sidebarHeader {
+	display: none;
+}
+
+.layout-mobile .navMenuOption {
+	width: 6rem;
+	height: 6rem;
+	flex: 0 0 auto;
+	padding: 0 !important;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 1rem !important;
+}
+.layout-mobile .navMenuOptionIcon {
+	margin: 0;
+}
+.layout-mobile .navMenuOptionText {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 1.2rem;
+}
+
+/* fix scrolling */
+.tmla-mask {
+	display: none;
+}
+
+.bodyWithPopupOpen:has(.drawer-open) {
+	overflow-y: scroll !important;
+}
+
+
+
+/* Library browsing */
+
+/* Better Filters */
+
+.layout-desktop .dynamicFilterDialog {
+	--width: clamp(20em, 80vw, 1200px);
+	top: 5vh !important;
+	left: calc(50% - var(--width)*.5) !important;
+	width: var(--width);
+	height: 85vh;
+	margin: 0 !important;
+}
+
+.layout-desktop .filterDialogContent #expandButton {
+	pointer-events: none;
+}
+.layout-desktop .filterDialogContent #expandButton .emby-collapse-expandIcon {
+	display: none;
+}
+
+.layout-desktop .filterDialogContent .collapseContent {
+	display: block !important;
+	height: auto !important;
+}
+
+.layout-desktop .filterDialogContent .checkboxList {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0 10px;
+}
+.layout-desktop .filterDialogContent .checkboxList .emby-checkbox-label {
+	width: auto;
+	height: auto;
+	padding: 0;
+	font-size: 1.4rem;
+}
+.layout-desktop .filterDialogContent .checkboxList .emby-checkbox-label .checkboxOutline {
+	position: static;
+	width: 1.35em;
+	height: 1.35em;
+	order: -1;
+	margin-right: .5em;
+}
+
+/* blur cards on hover
+.card:hover .cardImageContainer {
+	filter: blur(1px);
+}*/
+
+/* increase darkening */
+.cardOverlayContainer {
+	background: hsla(var(--hsl-darken), var(--o-darken));
+}
+
+
+
+/* buttons */
+.playstatebutton-icon-played {
+	color: green;
+}
+
+
+
+/* CARDS */
+
+.visualCardBox,
+.cardScalable {
+	border-radius: var(--r-large);
+	overflow: hidden;
+}
+
+.visualCardBox .cardScalable {
+	border-radius: var(--r-large) var(--r-large) 0 0;
+}
+
+/* Progress Bars */
+
+.innerCardFooter {
+	overflow: visible;
+}
+
+.itemProgressBar {
+	position: absolute;
+	left: .5rem;
+	right: .5rem;
+	bottom: .3rem;
+	height: .4rem;
+	background: #0008;
+	border-radius: 99em;
+	padding: .2rem;
+	backdrop-filter: blur(1px);
+}
+
+.itemProgressBarForeground {
+	position: static;
+	height: 100%;
+	border-radius: 99em;
+	background: var(--c-accent);
+}
+
+/* Multiple media indicator */
+
+/* TODO: move this to an option */
+/* removing this indicator because I could actually not care less about it when browsing */
+.mediaSourceIndicator {
+	display: none;
+}
+
+/* Indicators */
+
+.cardIndicators, .listItemIndicators {
+	top: .3rem;
+	right: .3rem;
+}
+
+.indicator {
+	border: 0;
+	border-radius: calc(var(--r-large) - .3rem) !important;
+	background: hsla(var(--hsl-foreground-stark), var(--o-medium));
+}
+
+/* Selection Overlay */
+
+.itemSelectionPanel {
+	border: 2px solid var(--c-text);
+	border-radius: var(--r-large);
+}
+.itemSelectionPanel:has(.chkItemSelect:checked) {
+	border-color: var(--c-accent);
+}
+
+.itemSelectionPanel .checkboxOutline {
+	top: .3rem !important;
+	left: .3rem;
+	border-radius: calc(var(--r-large) - .3rem) !important;
+}
+
+/* Hide all play buttons when they are un-interactable, such as during multi selection */
+.card-hoverable:has(.itemSelectionPanel) .cardOverlayButton-hover {
+	opacity: 0;
+}
+
+
+/* Add play icon to cards that don't have one already */
+
+.cardScalable:has([data-action="resume"]):not(:has(.cardOverlayButton)):hover {
+	--opacity: 1;
+}
+
+.cardScalable:has([data-action="resume"]):not(:has(.cardOverlayButton))::before,
+.cardScalable:has([data-action="resume"]):not(:has(.cardOverlayButton))::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	opacity: var(--opacity, 0);
+	transition: opacity var(--t-average) ease;
+}
+.cardScalable:has([data-action="resume"]):not(:has(.cardOverlayButton))::before {
+	inset: 0;
+	background: hsla(var(--hsl-darken), var(--o-darken));
+}
+.cardScalable:has([data-action="resume"]):not(:has(.cardOverlayButton))::after {
+	content: "\e037";
+	inset: 50% 50% auto auto;
+	width: 5vw;
+	height: 5vw;
+	background: hsla(var(--hsl-foreground-stark), var(--o-medium));
+	border-radius: var(--r-round);
+	color: var(--c-accent);
+	font: 3vw/5vw var(--f-icon);
+	text-align: center;
+	translate: 50% -50%;
+}
+
+/* Fancy play animation */
+
+.paper-icon-button-light[data-action="resume"] {
+	border-radius: var(--r-round);
+}
+
+.paper-icon-button-light[data-action="resume"]:hover:not(:disabled) {
+	background: hsla(var(--hsl-foreground-stark), var(--o-medium));
+	color: var(--c-accent);
+	text-shadow: 1px 1px 5px hsla(var(--hsl-accent), var(--o-medium));
+}
+
+.paper-icon-button-light[data-action="resume"]::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 3px 0 var(--c-accent), inset 0 1px 3px var(--c-accent);
+	border-radius: 100%;
+	opacity: 0;
+}
+/* .paper-icon-button-light[data-action="resume"]:hover:not(:disabled)::before {
+	animation:
+		8s linear .6s infinite rotate-repeat,
+		.6s cubic-bezier(0.25, 0.1, 0, 1) 0s backwards rotate-in;
+	opacity: 1;
+}
+@keyframes rotate-in {
+	from {
+		transform: rotate(-220deg);
+		opacity: 0;
+	} to {
+		transform: rotate(45deg);
+		opacity: 1;
+	}
+}
+@keyframes rotate-repeat {
+	from {
+		transform: rotate(45deg);
+	} to {
+		transform: rotate(405deg);
+	}
+} */
+
+/* CARDS - LIST STYLE */
+
+#tvRecommendedPage .itemsContainer.vertical-list {
+	max-width: 70em;
+	display: table;
+}
+	
+#tvRecommendedPage .itemsContainer.vertical-list .listItem {
+	display: table-row;
+}
+	
+#tvRecommendedPage .itemsContainer.vertical-list .listItem > * {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#tvRecommendedPage .itemsContainer.vertical-list .listItemImage {
+}
+
+#tvRecommendedPage .itemsContainer.vertical-list .listItemBody {
+	width: auto;
+}
+
+#tvRecommendedPage .itemsContainer.vertical-list .listItemMediaInfo {
+}
+
+#tvRecommendedPage .itemsContainer.vertical-list .mediaInfoOfficialRating {
+	white-space: nowrap;
+}
+
+#tvRecommendedPage .itemsContainer.vertical-list .starRatingContainer {
+	width: 4em;
+	margin-left: auto;
+}
+
+#tvRecommendedPage .itemsContainer.vertical-list .listViewUserDataButtons {
+	
+}
+
+
+
+/* Multi-Selection Dialogs */
+
+.selectionCommandsPanel {
+	background: var(--c-accent);
+}
+
+.itemSelectionCount::after {
+	content: " Selected";
+	cursor: text;
+}
+
+
+
+/* Hide collection year */
+.card[data-path*="/data/collections/"] .cardText-secondary {
+	display: none;
+}
+
+/* Hide collection count */
+.card[data-path*="/data/collections/"] .indicator {
+	display: none;
+}
+
+
+
+/* Increase collection poster size */
+
+@media (max-width:31.25em) or (min-width:31.25em) {
+	.collectionItems .portraitCard {
+		width: 50%;
+	}
+}
+@media (min-width:43.75em) {
+	.collectionItems .portraitCard {
+		width: 33.333333333333336%;
+	}
+}
+@media (min-width:50em) {
+	.collectionItems .portraitCard {
+		width: 25%;
+	}
+}
+@media (min-width:75em) {
+	.collectionItems .portraitCard {
+		width: 20%;
+	}
+}
+@media (min-width:87.5em) {
+	.collectionItems .portraitCard {
+		width: 16.666666666666668%;
+	}
+}
+@media (min-width:100em) {
+	.collectionItems .portraitCard {
+		width: 14.285714285714286%;
+	}
+}
+@media (min-width:120em) {
+	.portraitCard {
+		width: 12.5%;
+	}
+}
+@media (min-width:131.25em) {
+	.collectionItems .portraitCard {
+		width: 11.11111111111111%;
+	}
+}
+
+
+
+/* Letter Picker Improvements */
+
+.alphaPickerButton {
+	border-radius: 50%;
+	transition: background 0.1s ease-out;
+}
+.alphaPickerButton:hover,
+.alphaPickerButton-selected {
+	background: rgba(127, 127, 127, 0.25);
+}
+
+
+
+/* [id$="Collapsible"] .listItem {
+	position: relative;
+	float: left;
+	background: #333333;
+	background: #202020;
+	padding: 0;
+	border-radius: 10px;
+	margin: 0 0 .6em .6em;
+}
+[id$="Collapsible"] .listItemIcon {
+	display: none;
+}
+[id$="Collapsible"] .listItemBody {
+	padding: .4em .6em;
+}
+[id$="Collapsible"] .listItemBody + button {
+	position: absolute;
+	right: 0;
+	opacity: 0;
+	z-index: 1;
+}
+
+[id$="Collapsible"] .listItem:hover .listItemBody + button {
+	opacity: 1;
+} *//*
+DASHBOARD
+/dashboard
+/metadata
+*/
+
+.MuiListSubheader-gutters {
+	font-size: inherit;
+}
+
+.MuiListItemText-primary {
+	font-size: inherit;
+}
+
+.MuiListItemText-secondary {
+	font-size: .875em;
+}
+
+.MuiDrawer-paper {
+	background-color: var(--c-foreground);
+	color: var(--c-text);
+}
+
+/* ==-Metadata-Menus-======================================================= */
+
+.metadataEditorPage .metadataSidebarIcon {
+	color: var(--c-complementary);
+}
+
+.metadataEditorPage .jstree-default :is(.jstree-wholerow-clicked,.jstree-wholerow-hovered) {
+	background: hsla(var(--hsl-foreground), var(--o-medium)) !important;
+}
+.metadataEditorPage .jstree-wholerow-clicked ~ a {
+	color: var(--c-accent) !important;
+}
+.metadataEditorPage .jstree-wholerow-clicked ~ a .metadataSidebarIcon {
+	color: var(--c-accent) !important;
+}/*
+DIALOG
+media metadata
+*/
+
+@supports selector(html:has(body)) {
+	/* TEMP */
+
+	.layout-desktop #fldDateAdded .fieldDescription,
+	.layout-desktop .seriesDisplayOrderDescription {
+		display: none;
+	}
+
+	/* Base */
+
+	html:has(body) .dialog:has(.editItemMetadataForm) {
+		width: max-content;
+		height: calc(100% - 2rem);
+	}
+
+	/* Header & Footer */
+
+	html:has(body) .formDialogHeader,
+	html:has(body) .formDialogFooter {
+		padding: 0 1rem;
+	}
+
+	.layout-desktop .dialog:has(.editItemMetadataForm) .formDialogFooter {
+		position: absolute;
+		inset: 0 0 auto auto;
+		flex-wrap: nowrap;
+		gap: 1rem;
+		flex-direction: row-reverse;
+	}
+
+	.layout-desktop .dialog:has(.editItemMetadataForm) .formDialogFooterItem {
+		flex-basis: max-content;
+		margin: 0 !important;
+	}
+
+	.layout-desktop .editItemMetadataForm {
+		width: clamp(600px, 80vw, 800px);
+		max-width: initial;
+	}
+
+	/* Lock Item Checks */
+
+	@media (width > 1400px) {
+		.layout-desktop .dialog .editItemMetadataForm {
+			padding-right: 300px;
+		}
+		
+		.layout-desktop .dialog .checkboxContainer:has(#chkLockData) {
+			position: absolute;
+			top: 7rem;
+			left: calc(50% + 250px + 3rem);
+			width: calc(300px - 3rem);
+		}
+		.layout-desktop .dialog .checkboxContainer:has(#chkLockData) + .checkboxList {
+			position: absolute;
+			top: 11rem;
+			left: calc(50% + 250px + 3rem);
+			width: calc(300px - 3rem);
+		}
+		.layout-desktop .dialog .checkboxContainer:has(#chkLockData) + .checkboxList.hide {
+			display: block !important;
+			pointer-events: none;
+			opacity: .2;
+			filter: grayscale(1);
+		}
+	}
+
+	/* Fields */
+
+	.layout-desktop .metadataFormFields {
+		font-size: 13px;
+		line-height: 1.25;
+	}
+
+	.layout-desktop .metadataFormFields:has(#fldTagline.hide) {
+		--tv-column: "date-added air-time runtime null" "air-days air-days air-days air-days"
+	}
+	.layout-desktop .metadataFormFields:has(#fldTagline:not(.hide)) {
+		--movie-column: "tagline tagline tagline tagline";
+	}
+
+	.layout-desktop .metadataFormFields > div:first-of-type {
+		display: grid;
+		grid-template-columns: repeat(4, calc(25% - .6rem));
+		grid-template-areas:
+			"header header header header"
+			"title title og-title sort-title"
+			var(--movie-column,)
+			"desc desc desc desc"
+			"date-start date-end year status"
+			var(--tv-column,)
+			"rating-official rating-custom score after-ratings"
+		;
+		gap: .6rem;
+	}
+
+	.layout-desktop .externalIds {
+		display: grid;
+		grid-template-columns: repeat(3, calc(33.3334% - .6rem));
+		gap: .6rem;
+	}
+
+	.layout-desktop .metadataFormFields .inlineForm {
+		display: contents;
+	}
+	.layout-desktop .metadataFormFields .inlineForm .inputContainer,
+	.layout-desktop .metadataFormFields .inlineForm .selectContainer {
+		margin: 0;
+	}
+
+	/* Path */
+
+	.layout-desktop #fldPath {
+		grid-area: header
+	}
+	.layout-desktop #fldPath label {
+		display: none;
+	}
+	.layout-desktop #fldPath input {
+		background: none;
+		border: none;
+		padding: 0;
+		opacity: 0.5;
+	}
+
+	/* Titles */
+
+	.layout-desktop .inputContainer:has(#txtName) {
+		grid-area: title
+	}
+	.layout-desktop #fldOriginalName {
+		grid-area: og-title
+	}
+	.layout-desktop .inputContainer:has(#txtSortName) {
+		grid-area: sort-title
+	}
+
+	/* Tagline */
+
+	.layout-desktop #fldTagline {
+		grid-area: tagline
+	}
+
+	/* Dates */
+
+	.layout-desktop #fldPremiereDate {
+		grid-area: date-start
+	}
+	.layout-desktop #fldEndDate {
+		grid-area: date-end
+	}
+	.layout-desktop #fldYear {
+		grid-area: year
+	}
+	.layout-desktop #fldPlaceOfBirth,
+	.layout-desktop #fldStatus {
+		grid-area: status
+	}
+
+	.layout-desktop #fldDateAdded {
+		grid-area: date-added
+	}
+	.layout-desktop .metadataFormFields:has(#fldEndDate.hide) #fldDateAdded {
+		grid-area: date-end;
+		grid-row: date-end / span 2;
+	}
+	.layout-desktop #fldAirTime {
+		grid-area: air-time
+	}
+	.layout-desktop #fldAirDays {
+		grid-area: air-days
+	}
+	.layout-desktop #fldAirDays p {
+		margin: 0;
+	}
+	.layout-desktop #fldAirDays .checkboxList {
+		display: flex;
+		width: fit-content;
+		gap: 1rem;
+	}
+
+	/* Ratings */
+
+	.layout-desktop #fldOfficialRating {
+		grid-area: rating-official
+	}
+	.layout-desktop #fldCustomRating {
+		grid-area: rating-custom
+	}
+	.layout-desktop #fldCommunityRating {
+		grid-area: score
+	}
+	.layout-desktop #fldCriticRating,
+	.layout-desktop #fldDisplayOrder {
+		grid-area: after-ratings
+	}
+
+	/* Misc */
+
+	.layout-desktop #fld3dFormat,
+	.layout-desktop #fldOriginalAspectRatio {
+		grid-row: -1;
+	}
+
+
+	/* Description/overview */
+
+	.layout-desktop .overviewContainer {
+		grid-area: desc;
+	}
+	.layout-desktop #txtOverview {
+		resize: vertical;
+	}
+}/*
+HOME PAGE
+/home.html
+*/
+
+/* Large library widget */
+
+/* display more libraries */
+
+.card:is([data-collectiontype="playlists"],[data-type="CollectionFolder"]) {
+	flex: 1 0 auto;
+	width: 20rem;
+}
+
+.card:is([data-collectiontype="playlists"],[data-type="CollectionFolder"]) .cardText {
+	max-width: 100%;
+	white-space: normal;
+	text-overflow: ellipsis;
+}
+
+/* Small libary widget */
+
+.homeLibraryButton:hover {
+	background-color: hsla(var(--hsl-foreground), var(--o-medium));
+	color: var(--c-accent);
+}/*
+LOGIN PAGE
+/login.html
+*/
+
+/* Containers */
+
+#loginPage {
+	display: grid;
+	place-items: center;
+	padding: 5rem !important;
+	overflow: auto;
+}
+
+#loginPage h1 {
+	display: none !important;
+}
+
+#loginPage .cardPadder {
+	background: none !important;
+}
+
+#loginPage .defaultCardBackground {
+	background: hsla(var(--hsl-foreground), var(--o-medium));
+}
+
+#loginPage > div {
+	position: relative;
+	min-width: 26rem;
+	max-width: 40rem;
+	background: var(--c-foreground-stark);
+	border-radius: var(--r-large);
+	padding: 2rem !important;
+	margin: 0 auto;
+}
+
+#loginPage .manualLoginForm {
+	max-width: initial;
+}
+
+/* Background */
+
+#loginPage::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(170deg, #b32424 100px, #500152, #340034, #27001f);
+	opacity: 0.25;
+}
+
+/* User Icons */
+
+#loginPage #divUsers {
+	gap: 2rem;
+	justify-content: left;
+}
+
+#loginPage .card {
+	width: 12rem;
+}
+#loginPage .cardBox {
+	margin: 0 !important;
+}
+
+/* Buttons */
+
+#loginPage .readOnlyContent {
+	margin: 0 !important;
+}
+
+#loginPage .raised {
+	margin-top: 1rem !important;
+	margin-block: 0;
+}
+#loginPage .raised:not(.button-submit) {
+	background: hsla(var(--hsl-foreground), var(--o-medium));
+}
+
+/* Disclaimer */
+
+#loginPage .loginDisclaimerContainer {
+	margin: 0;
+	order: -1;
+}
+#loginPage .loginDisclaimer p {
+	margin: 2rem 0 1rem;
+}
+
+/* Hide useless header - this code is a bit delicate due to the over-complicated selector... hope it doesn't break! */
+
+#reactRoot:has(#loginPage:not(.hide)) > div:not([class]) {
+	display: none !important;
+}/*
+MEDIA ITEM
+/details
+*/
+
+:root {
+	--s-banner: 17rem;
+	--s-card: clamp(200px, 24vw, 500px);
+	--s-card-pad: var(--s-page-pad);
+	--s-card-allowance: calc(var(--s-card) + var(--s-card-pad) * 2);
+}
+/* enabled banner */
+@supports selector(:has(*)) {
+	.layout-desktop:has(.withBackdrop) {
+		--s-banner: max(calc(65px + 25rem + 10vh), 50vh);
+	}
+}
+@supports not selector(:has(*)) {
+	.layout-desktop .withBackdrop ~ * {
+		--s-banner: max(calc(65px + 25rem + 10vh), 50vh);
+	}
+}
+/* mobile banner */
+.layout-mobile {
+	--s-banner: max(200px, 25vh);
+}
+
+.detailPageWrapperContainer {
+	position: relative;
+	top: 0 !important;
+	background: var(--c-background);
+}
+.layout-desktop .detailPageWrapperContainer::before {
+	content: "";
+	position: absolute;
+	inset: auto 0 100%;
+	height: calc(var(--s-banner) * 0.3);
+	background: linear-gradient(0deg, var(--c-foreground-stark), transparent);
+	opacity: .6;
+}
+
+.detailPagePrimaryContent {
+	padding-right: var(--s-page-pad);
+	/* give details a maximum width for readability */
+	max-width: 90ch;
+}
+
+@supports selector(:has(*)) {
+	html:has(#itemDetailPage:not(.hide)) .backgroundContainer.withBackdrop {
+		clip-path: inset(0 calc(100% - var(--s-sidebar-allowance)) 0 0)
+	}
+
+	html:has(#itemDetailPage:not(.hide)):has(.withBackdrop) .detailPageWrapperContainer {
+		background: hsla(var(--hsl-background), var(--o-background));
+	}
+}
+@supports not selector(:has(*)) {
+	.withBackdrop ~ * .detailPageWrapperContainer {
+		background: hsla(var(--hsl-background), var(--o-background));
+	}
+}
+.withBackdrop ~ * .detailPageWrapperContainer {
+		background: hsla(var(--hsl-background), var(--o-background));
+		backdrop-filter: blur(10px)
+	}
+
+/* BACKGROUND IMAGE */
+
+.itemBackdrop {
+	position: static;
+	top: 0;
+	width: 100%;
+	height: var(--s-banner);
+	background-attachment: scroll;
+	background-position: center 20%;
+}
+
+html:has(#itemDetailPage:not(.hide)) .backdropImage {
+	filter: none;
+}
+
+.layout-desktop .itemBackdrop::after {
+	content: none;
+}
+
+/* HEADER */
+
+.mediaInfoOfficialRating {
+	border-radius: var(--r-small);
+}
+
+/* DETAILS */
+
+/* Re-arrange details */
+
+.itemDetailsGroup,
+.detailSectionContent {
+	display: contents;
+}
+
+.detailSection {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+}
+
+.itemGenres:empty {
+	display: none;
+}
+
+.tagline ~ .overview {
+	margin-top: 0;
+}
+
+.itemExternalLinks {
+	order: 99;
+}
+
+.detailRibbon {
+	background: var(--c-foreground-stark);
+	margin-top: 0 !important;
+}
+
+
+.layout-desktop .detailPagePrimaryContainer,
+.layout-desktop .detailPageContent {
+	padding-left: var(--s-card-allowance) !important;
+}
+
+.layout-desktop .detailPagePrimaryContainer {
+	position: static;
+}
+
+.layout-desktop .detailImageContainer {
+	position: absolute;
+	top: -9rem;
+	left: var(--s-card-pad);
+	bottom: 0;
+	padding: 0;
+	pointer-events: none;
+}
+
+.layout-desktop .detailImageContainer .card {
+	position: sticky !important;
+	top: 10rem;
+	left: 0 !important;
+	width: var(--s-card);
+	max-width: initial;
+	transform: none;
+	pointer-events: auto;
+}
+
+/* disable interaction on certain card types that just give errors */
+.detailImageContainer .card[data-type="Person"] {
+	pointer-events: none;
+}
+
+/* HEADER */
+
+.layout-desktop .detailLogo {
+	z-index: 1;
+	left: var(--s-card-allowance);
+	width: calc(100% - var(--s-card-allowance) - var(--s-page-pad) - 2rem);
+	top: calc(var(--s-banner) - 9rem);
+	height: 7rem;
+	background-position-x: 33%;
+}
+
+/* HEADER BUTTONS */
+
+/* button text */
+.detailButton {
+	flex-flow: row;
+	gap: .6rem;
+}
+.detailButton::after {
+	content: var(--txt, none);
+	position: absolute;
+	top: calc(100% - .6rem);
+	left: 50%;
+	text-transform: uppercase;
+	transform: translateX(-50%) scale(0);
+	transform-origin: center top;
+	transition: transform .2s ease;
+}
+.detailButton:hover::after {
+	transform: translateX(-50%) scale(1);
+}
+.btnPlay::after {
+	position: static !important;
+	transform: none !important;
+}
+.btnPlay {
+	--txt: "Play";
+}
+.btnPlayTrailer {
+	--txt: "Trailer";
+}
+.btnDownload {
+	--txt: "Download";
+}
+.btnShuffle {
+	--txt: "Shuffle";
+}
+.btnPlaystate {
+	--txt: "Done";
+}
+.btnUserRating {
+	--txt: "Love";
+}
+.btnMoreCommands {
+	--txt: "More";
+}
+
+/* TAGS */
+
+/* styles tags the same as genres/writers using some hacky overflow and ::before tricks */
+.itemTags {
+	margin: 0 0 .6em 6.85em !important;
+	font-size: 100% !important;
+	text-indent: -4.5ch; /* VERY INNACURATELY hides the "Tags: " text from the start. */
+	overflow: hidden;
+}
+.itemTags > * {
+	text-indent: 0;
+}
+.layout-mobile .itemTags {
+	margin-left: 5.1em !important;
+}
+
+.itemTags::before {
+	content: "Tags";
+	position: absolute;
+	left: 0;
+	width: 6.25em;
+	text-indent: 0;
+}
+
+/* EXTERNAL LINKS */
+
+.itemExternalLinks {
+	display: flex;
+	gap: .3rem;
+	font-size: 0 !important;
+	flex-wrap: wrap;
+}
+
+.itemExternalLinks a {
+	padding: .3rem .6rem;
+	background: hsla(var(--hsl-foreground), var(--o-medium));
+	border-radius: .3rem;
+	font-size: 1.4rem;
+	line-height: 1.3;
+}
+.itemExternalLinks a:hover {
+	background: hsla(var(--hsl-foreground), var(--o-medium));
+	text-decoration: none;
+	color: var(--c-accent);
+}
+
+.itemExternalLinks a::before {
+	width: 1em;
+	height: 1em;
+	border-radius: .2rem;
+	margin-right: .6rem;
+	background-size: contain;
+}
+.itemExternalLinks a[href^="https://anilist.co"]::before {
+	content: "";
+	background-image: url(https://anilist.co/img/icons/favicon-32x32.png);
+}
+.itemExternalLinks a[href^="https://www.imdb.com"]::before {
+	content: "";
+	background-image: url(https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png);
+}
+.itemExternalLinks a[href^="https://www.themoviedb.org"]::before {
+	content: "";
+	background-image: url(https://www.themoviedb.org/assets/2/favicon-32x32-543a21832c8931d3494a68881f6afcafc58e96c5d324345377f3197a37b367b5.png);
+}
+.itemExternalLinks a[href^="https://trakt.tv"]::before {
+	content: "";
+	background-image: url(https://walter.trakt.tv/hotlink-ok/public/apple-touch-icon.png);
+}
+.itemExternalLinks a[href^="http://www.tvmaze.com"]::before {
+	content: "";
+	background-image: url(https://static.tvmaze.com/images/favico/favicon-32x32.png);
+}
+.itemExternalLinks a[href^="https://www.thetvdb.com"]::before {
+	content: "";
+	background-image: url(https://www.thetvdb.com/images/icon.png);
+}
+
+.itemExternalLinks a[href*="themoviedb.org/collection"]::after {
+	content: " Collection";
+	white-space: pre;
+}
+
+
+/* CAST & CREW */
+
+/* move cast to bottom of page, below special features */
+#childrenCollapsible:has([data-type="Episode"]) ~ #castCollapsible {
+	order: 99;
+}
+
+/* Stylized and smaller cast/crew info as per https://jellyfin.org/docs/general/clients/css-customization.html */
+
+/* Shrink and square (or round) cast thumnails */
+#castContent .card.overflowPortraitCard.personCard.card-hoverable.card-withuserdata {width: 4.2cm !important; font-size: 90% !important;}
+#castContent .card.overflowPortraitCard.personCard.card-withuserdata {width: 4.2cm !important; font-size: 90% !important;}
+
+/* Correct image aspect ratio behaviour, set border-radius to zero for square tiles */
+#castContent .cardContent-button.cardImageContainer.coveredImage.cardContent.cardContent-shadow.itemAction.lazy {background-size: cover !important; border-radius: 2.5cm;}
+#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground1.cardContent.cardContent-shadow.itemAction {background-size: cover !important; border-radius: 2.5cm;}
+#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground2.cardContent.cardContent-shadow.itemAction {background-size: cover !important; border-radius: 2.5cm;}
+#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground3.cardContent.cardContent-shadow.itemAction {background-size: cover !important; border-radius: 2.5cm;}
+#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground4.cardContent.cardContent-shadow.itemAction {background-size: cover !important; border-radius: 2.5cm;}
+#castContent .cardContent-button.cardImageContainer.coveredImage.defaultCardBackground.defaultCardBackground5.cardContent.cardContent-shadow.itemAction {background-size: cover !important; border-radius: 2.5cm;}
+#castContent .cardScalable {width: 3.8cm !important; height: 3.8cm !important; border-radius: 2.5cm;}
+#castContent .cardOverlayContainer.itemAction,
+#castContent .cardOverlayButton {
+	border-radius: var(--r-round);
+}
+
+/* Center the mouseover buttons */
+#castContent .cardOverlayButton-br {bottom: 4%; right: 15%; width: 70%;}
+#castContent .cardOverlayButton.cardOverlayButton-hover.itemAction.paper-icon-button-light {margin:auto;}
+
+
+/* MORE LIKE THIS - recommended/suggestions section - only affects mouse input because it would be hell on mobile */
+
+@media (pointer: fine) {
+	#similarCollapsible .card + .card {
+		margin-left: -4em;
+		transition: translate 0.1s ease-out;
+	}
+	#similarCollapsible .card:hover ~ .card {
+		translate: 3.5em 0;
+	}
+	
+	#similarCollapsible .card + .card .cardScalable {
+		box-shadow: -1.5rem 0 1rem -1rem #000b;
+	}
+	#similarCollapsible .card:not(:hover):not(:last-of-type) .cardText {
+		mask-image: linear-gradient(to left, transparent 1vw, rgba(0,0,0,0.1) 3vw, black 7vw);
+	}
+	
+	#similarCollapsible .cardIndicators {
+		right: auto;
+		left: .3rem;
+	}
+}
+@media not (pointer: fine) {
+	#similarCollapsible .itemsContainer {
+		display: grid;
+		grid-template-columns: repeat(3, 31.2vw);
+	}
+}
+
+/* SEASON PAGES */
+
+
+/* Episode pages & "more from" section on library pages */
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .itemsContainer {
+	flex-flow: row wrap;
+	padding-right: 0;
+}
+
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listItem {
+	position: relative;
+	width: 30rem;
+	overflow: visible;
+	contain: initial;
+}
+
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listItem-content {
+	flex-flow: column nowrap;
+}
+
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listItemImage {
+	width: 100%;
+	height: calc(30rem * 9/16);
+	border-radius: 1rem;
+	margin: 0;
+	overflow: hidden;
+}
+
+.layout-desktop  .listItemBody {
+	width: 100%;
+}
+
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listItemImage::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.7);
+	opacity: 0;
+	transition: opacity .2s ease;
+}
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listItem:hover .listItemImage::before {
+	opacity: 1;
+}
+
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listItemBody {
+	padding: .25em .5em .85em;
+	order: 1;
+	overflow: visible;
+	contain: initial;
+}
+
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listViewUserDataButtons {
+	height: 3em;
+	margin-top: -3em;
+	opacity: 0;
+	transition: opacity .2s ease;
+}
+.layout-desktop  #childrenCollapsible.verticalSection-extrabottompadding .listItem:hover .listViewUserDataButtons {
+	opacity: 1;
+}
+	
+/* descriptions */
+
+.layout-desktop  .listItem-overview {
+	position: absolute;
+	bottom: 100%;
+	z-index: 5;
+	background: var(--c-foreground);
+	padding: .6em;
+	border-radius: .6em;
+	pointer-events: none;
+	opacity: 0;
+}
+.layout-desktop  .listItem:hover .listItem-overview {
+	opacity: 1;
+}
+
+/* PLAYLISTS */
+
+.listItem[data-playlistitemid] {
+	display: grid;
+}
+
+.listItem[data-playlistitemid] {
+	display: grid;
+	grid-template-columns: 0fr 1fr 100fr 1fr 1fr;
+	grid-template-areas: "handle image title info buttons";
+}
+
+.listItem[data-playlistitemid] .listViewDragHandle {
+	grid-area: handle;
+}
+
+.listItem[data-playlistitemid] .listItemImage {
+	grid-area: image;
+}
+
+.listItem[data-playlistitemid] .listItemBody {
+	grid-area: title;
+}
+
+.listItem[data-playlistitemid] .listViewUserDataButtons {
+	grid-area: buttons;
+}
+
+/* media info */
+
+.listItem[data-playlistitemid] .listItemMediaInfo {
+	grid-area: info;
+	display: grid;
+	grid-template-columns: 9rem 7rem 4em 4em 2em;
+	grid-template-areas: "date duration rating score cc";
+	gap: .6rem;
+}
+
+.listItem[data-playlistitemid] .listItemMediaInfo {
+	grid-area: info;
+	display: grid;
+	grid-template-columns: 7rem 9rem 4em 4em 2em;
+	grid-template-areas: "date duration rating score cc";
+	gap: .6rem;
+}
+
+
+.listItem[data-playlistitemid] .mediaInfoItem {
+	margin: 0;
+}
+
+.listItem[data-playlistitemid] .mediaInfoOfficialRating {
+	grid-area: rating;
+	white-space: nowrap;
+}
+
+.listItem[data-playlistitemid] .starRatingContainer {
+	grid-area: score;
+}
+
+.listItem[data-playlistitemid] .closedCaptionMediaInfoText {
+	grid-area: cc;
+}
+
+/* swap date with duration because neither has a distinguishing class and it's more likely that the date will be missing
+this should prevent some layout issues */
+.listItem[data-playlistitemid] [class="mediaInfoItem"] + [class="mediaInfoItem"] {
+	order: -1;
+}
+
+/*
+METADATA MANAGER
+/edititemmetadata.html
+*/
+
+.editPageSidebar {
+	left: 5rem;
+}/*
+PLAYER
+/video
+*/
+
+
+/* temp */
+
+/* .videoOsdBottom, */
+/* .osdHeader-hidden
+{
+	display: block !important;
+	opacity: 1;
+} */
+
+/* Controls */
+
+/* .osdControls {
+	display: flex;
+	flex-direction: column-reverse;
+} */
+
+
+
+/* Progress Bar */
+
+.mdl-slider-background-flex {
+	background: hsla(var(--hsl-foreground-stark), var(--o-medium));
+	padding: .2rem;
+	height: .3rem;
+	backdrop-filter: blur(1px);
+	transform: translateY(-50%);
+	margin: 0;
+}
+
+.mdl-slider-background-flex,
+.mdl-slider-background-lower,
+.mdl-slider-background-upper {
+	border-radius: 99em;
+}
+
+.mdl-slider-background-lower {
+	background: var(--c-accent);
+}
+
+.mdl-slider-background-upper {
+	background: #fff4;
+}
+
+/* Handle */
+
+.mdl-slider {
+	padding-top: .1rem;
+}
+
+/* Time Slider */
+
+.sliderBubble {
+	background: var(--g-background);
+	backdrop-filter: blur(5px);
+	border-radius: 1rem;
+}
+
+.sliderBubbleText {
+	padding: 1rem;
+}
+
+/* Next Up */
+
+.upNextContainer {
+	border-radius: var(--r-large);
+}
+
+.upNextDialog-countdownText {
+	color: var(--c-accent);
+	font-weight: inherit;
+}
+
+.upNextDialog-button {
+	background: none;
+	padding: .2em .5em;
+	text-transform: uppercase;
+	color: var(--c-accent);
+}
+.upNextDialog-button:hover {
+	background: hsla(var(--hsl-foreground-stark), var(--o-heavy));
+}
+.upNextDialog-button::before,
+.upNextDialog-button::after {
+	margin-right: .3rem;
+	font-family: var(--f-icon);
+	font-size: 2em;
+	line-height: inherit;
+}
+
+.upNextDialog-button.btnStartNow::before {
+	content: "\e044 ";
+}
+
+.upNextDialog-button.btnHide::before {
+	content: "\e5cd ";
+}/*
+PROFILE
+/mypreferencesmenu.html
+*/
+
+#myPreferencesMenuPage .listItem-border {
+	border: none !important;
+}
+
+#myPreferencesMenuPage h2 {
+	color: var(--c-accent);
+	margin-block: 2rem;
+}
+
+#myPreferencesMenuPage .listItem {
+	padding-inline: 2rem;
+	border-radius: var(--r-large);
+	transition-property: background-color, color;
+	transition-duration: var(--t-quick);
+}
+
+/* only works on newer browsers */
+/* .layout-desktop #userProfilePage form div:not([class]):has(div>.emby-button) {
+	display: flex;
+	gap: 1rem;
+}
+
+.layout-desktop .userPreferencesPage .button-submit {
+	width: fit-content;
+} */
+
+.subtitleappearance-preview {
+	border-radius: var(--r-round);
+	background:
+		linear-gradient(-15deg, #0002, #1c1c1c44),
+		radial-gradient(circle at 20% -30%, hsla(70deg, 65%, 65%, 70%), hsla(230deg, 50%, 50%, 65%) 60%, hsla(200deg, 70%, 50%, 45%))
+		!important;
+}/*
+ANIMATIONS
+*/
+
+.btnPlaystate:hover .detailButton-icon {
+	animation: check-slap .5s cubic-bezier(.37,-0.34,.75,1.36);
+}
+
+@keyframes check-slap {
+	0%, 100% {
+		rotate: 0deg;
+		transform-origin: 25 50%;
+	}
+	20% {
+		rotate: 3deg;
+		scale: 1.1;
+	}
+	45% {
+		rotate: -5deg;
+		scale: 1.05;
+		translate: 0 0;
+	}
+	60% {
+		translate: 1% -1%;
+	}
+}
+
+.btnPlaystate:hover .detailButton-icon::before {
+	transition-delay: .5s;
+}
+.btnPlaystate:hover .detailButton-icon::after {
+	content: "\e5ca";
+	display: inline-block;
+	color: var(--c-accent);
+	transform: translateX(-100%);
+	animation: check .5s ease-in-out;
+	opacity: 0;
+}
+
+@keyframes check {
+	0% {
+		clip-path: polygon(0% 0%, 30% 0%, 0% 30%, 0% 100%);
+		opacity: 1;
+	}
+	50% {
+		clip-path: polygon(0% 0%, 75% 25%, 25% 75%, 0% 100%);
+		opacity: 1;
+	}
+	100% {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+		opacity: 1;
+	}
+}
+
+.btnUserRating:hover .detailButton-icon {
+	animation: bouncy .5s cubic-bezier(.37,-0.34,.75,1.36);
+}
+
+@keyframes bouncy {
+	0%, 100% {
+		scale: 1;
+	}
+	60% {
+		scale: 1.07;
+		rotate: 15deg;
+	}
+	80% {
+		scale: .95;
+		rotate: -5deg;
+	}
+}/* Disable Image Carousels */
+@media all and (min-width: 50em) {
+  .homePage .emby-scroller {
+    margin-right: 0;
+  }
+
+  .homePage .emby-scrollbuttons {
+    display: none;
+  }
+
+  .homePage .itemsContainer {
+    flex-wrap: wrap;
+  }
+}/*
+ * HIDE SPOILERS
+ */
+
+/* Blur unwatched episodes, but not partially watched */
+
+.listItemImage:not(:has(.playedIndicator),:has(.listItemProgressBar))::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	backdrop-filter: blur(15px);
+}
+
+.listItemImageButton {
+	z-index: 1;
+}/* Media Bar Plugin */
+/* 
+@media only screen and (min-width: 767px) {
+  #slides-container {
+      width: 90%;
+      border-radius: unset;
+  }
+} 
+*/
+
+/* Rockfin skin only. otherwise use above */
+@media only screen and (min-width: 767px) {
+	#slides-container {
+		/* adjust width based on collapsed sidebar */
+		width: calc(100% - 50px);
+		margin-left: 50px;
+	}
+}
+
+
+.detail-button {
+	background-color: var(--c-foreground-stark);
+	color: var(--c-text);
+}
+
+.play-button {
+	background-color: var(--c-foreground);
+	color: var(--c-text);
+}
+
+.play-button,
+.detail-button {
+	/* border: solid 1px var(--c-border); */
+	border: none;
+	border-radius: var(--r-medium);
+	font-size: 14px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	-webkit-tap-highlight-color: var(--hsl-active);
+}
+/* NEXT UP */
+/* assumes that there is only one more "next up" item because when would there ever be multiple?.... */
+
+.layout-desktop .nextUpSection {
+	position: absolute;
+	top: -25rem;
+	right: 0;
+	z-index: 1;
+}
+@media (width > 1600px) {
+	.layout-desktop .nextUpSection {
+		top: 11rem;
+	}
+}
+.layout-desktop .nextUpSection .card {
+	width: 26rem;
+}
+
+.detailPageSecondaryContainer {
+	padding: 1.25em 0;
+	margin: 0;
+}/* Pictureless Cast & Crew */
+#castContent .card.overflowPortraitCard {
+	width: 4.2cm;
+	font-size: 90%;
+}
+
+#castContent .personCard {
+	width: auto;
+}
+
+#castContent .personCard .cardBox {
+	margin-bottom: 0px;
+	margin-right: 0px;
+}
+
+#castContent {
+	flex-wrap: wrap;
+	max-height: 9.75em;
+}
+
+div.personCard> :first-child> :first-child {
+	display: none;
+}
+
+.itemDetailPage .cardText {
+	text-align: left;
+}
+
+.itemDetailPage .textActionButton {
+	text-align: left;
+}/*
+REMOVE TRAILERS & UPCOMING
+*/
+.libraryDocument:has(.libraryPage:not(.hide,.liveTvPage)) .emby-tab-button[data-index="2"] {
+	display: none;
+}/* Adjusted Card Sizes */
+:root {
+    --card-width-xs: min(50vw, 200px);
+    --card-width-sm: min(38vw, 190px);
+    --card-width-md: min(30vw, 180px);
+    --card-width-lg: min(23vw, 170px);
+    --card-width-xl: min(18vw, 150px);
+    --card-width-xxl: min(13vw, 130px);
+}
+
+.card:is([data-mediatype]) {
+    width: var(--card-width-xs) !important;
+}
+
+.card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+    width: calc(var(--card-width-xs) * 2) !important;
+}
+
+@media (min-width: 600px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-sm) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-sm) * 2) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-md) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-md) * 2) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-lg) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-lg) * 2) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-xl) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-xl) * 2) !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .card:is([data-mediatype]) {
+        width: var(--card-width-xxl) !important;
+    }
+
+    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
+        width: calc(var(--card-width-xxl) * 2) !important;
+    }
+}/* mod text inside popup for chapter and time */
+.chapterThumbTextContainer {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    right: auto;
+    bottom: 4px;
+    left: 4px;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0 0 1.9vh #000;
+    /* stack vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 240px;
+}
+
+/* display title above time */
+.chapterThumbText {
+    font-size: 1.1em;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.chapterThumbText:empty {
+    display: none;
+}
+
+.chapterThumbTextContainer:has(.chapterThumbText:empty) {
+    height: auto;
+}
