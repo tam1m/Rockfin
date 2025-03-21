@@ -2,9 +2,9 @@ name: Process and Minify CSS
 
 on:
   workflow_dispatch:
-  # push:
-  #   paths:
-  #     - '**.css'  # Runs only when a CSS file is modified
+  push:
+    paths:
+      - '**.css'
 
 jobs:
   build-css:
