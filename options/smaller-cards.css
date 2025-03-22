@@ -1,5 +1,9 @@
 /* Adjusted Card Sizes */
 :root {
+    /* default */
+    --card-width: min(50vw, 200px);
+    --card-padding: 5px;
+
     --card-width-xs: min(50vw, 200px);
     --card-width-sm: min(38vw, 190px);
     --card-width-md: min(30vw, 180px);
@@ -8,60 +12,47 @@
     --card-width-xxl: min(13vw, 130px);
 }
 
-.card:is([data-mediatype]) {
-    width: var(--card-width-xs) !important;
+/* Default Card Sizes */
+.card[data-mediatype] {
+    width: var(--card-width) !important;
+    /* padding: var(--card-padding) !important; */
 }
 
-.card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
-    width: calc(var(--card-width-xs) * 2) !important;
+.card.overflowBackdropCard[data-mediatype],
+.card.backdropCard[data-mediatype] {
+    width: calc(var(--card-width) * 1.8) !important;
+}
+
+.card.squareCard[data-mediatype] {
+    width: calc(var(--card-width) * 1.2) !important;
 }
 
 @media (min-width: 600px) {
-    .card:is([data-mediatype]) {
-        width: var(--card-width-sm) !important;
-    }
-
-    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
-        width: calc(var(--card-width-sm) * 2) !important;
+    :root {
+        --card-width: var(--card-width-sm);
     }
 }
 
 @media (min-width: 768px) {
-    .card:is([data-mediatype]) {
-        width: var(--card-width-md) !important;
-    }
-
-    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
-        width: calc(var(--card-width-md) * 2) !important;
+    :root {
+        --card-width: var(--card-width-md);
     }
 }
 
 @media (min-width: 992px) {
-    .card:is([data-mediatype]) {
-        width: var(--card-width-lg) !important;
-    }
-
-    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
-        width: calc(var(--card-width-lg) * 2) !important;
+    :root {
+        --card-width: var(--card-width-lg);
     }
 }
 
 @media (min-width: 1200px) {
-    .card:is([data-mediatype]) {
-        width: var(--card-width-xl) !important;
-    }
-
-    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
-        width: calc(var(--card-width-xl) * 2) !important;
+    :root {
+        --card-width: var(--card-width-xl);
     }
 }
 
 @media (min-width: 1400px) {
-    .card:is([data-mediatype]) {
-        width: var(--card-width-xxl) !important;
-    }
-
-    .card:is(.overflowBackdropCard, .backdropCard)[data-mediatype] {
-        width: calc(var(--card-width-xxl) * 2) !important;
+    :root {
+        --card-width: var(--card-width-xxl);
     }
 }
