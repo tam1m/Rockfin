@@ -391,6 +391,10 @@ html:not(:has(script[src^="file:///"])) .pageTitleWithDefaultLogo {
 	backdrop-filter: blur(5px);
 }
 
+.appfooter {
+	background: hsla(var(--hsl-background), var(--o-darken));
+	backdrop-filter: blur(5px);
+}
 
 
 
