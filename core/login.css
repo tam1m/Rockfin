@@ -1,11 +1,13 @@
 /*
 LOGIN PAGE
 /login.html
+/forgotpassword.html
 */
 
 /* Containers */
 
-#loginPage {
+#loginPage,
+#forgotPasswordPage {
 	display: grid;
 	place-items: center;
 	padding: 5rem !important;
@@ -14,6 +16,10 @@ LOGIN PAGE
 
 #loginPage h1 {
 	display: none !important;
+}
+#loginPage h1,
+#forgotPasswordPage h1 {
+	margin-top: 0;
 }
 
 #loginPage .cardPadder {
@@ -24,7 +30,8 @@ LOGIN PAGE
 	background: hsla(var(--hsl-foreground), var(--o-medium));
 }
 
-#loginPage > div {
+#loginPage > div,
+#forgotPasswordPage > div {
 	position: relative;
 	min-width: 26rem;
 	max-width: 40rem;
@@ -40,7 +47,8 @@ LOGIN PAGE
 
 /* Background */
 
-#loginPage::before {
+#loginPage::before,
+#forgotPasswordPage::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -71,11 +79,12 @@ LOGIN PAGE
 	margin: 0 !important;
 }
 
-#loginPage .raised {
-	margin-top: 1rem !important;
-	margin-block: 0;
+#loginPage .raised,
+#forgotPasswordPage .raised {
+	margin: 1rem 0 0 !important;
 }
-#loginPage .raised:not(.button-submit) {
+#loginPage .raised:not(.button-submit),
+#forgotPasswordPage .raised {
 	background: hsla(var(--hsl-foreground), var(--o-medium));
 }
 
@@ -89,8 +98,22 @@ LOGIN PAGE
 	margin: 2rem 0 1rem;
 }
 
-/* Hide useless header - this code is a bit delicate due to the over-complicated selector... hope it doesn't break! */
-
-#reactRoot:has(#loginPage:not(.hide)) > div:not([class]) {
+/* hide the header by use of the hideMainDrawer class as I have only seen it used on the login page.
+This should be changed if found elsewhere. */
+body.hideMainDrawer .skinHeader {
 	display: none !important;
+}
+
+/* Add the logo back using a pseudo element - this is done so that it can align with the form */
+#loginPage > div::before,
+#forgotPasswordPage > div::before {
+	content: "";
+	position: absolute;
+	top: -2.3rem;
+	left: 2rem;
+	background: var(--c-accent);
+	-webkit-mask: url(./assets/img/banner-light.png) left center / contain no-repeat;
+	mask: url(./assets/img/banner-light.png) left center / contain no-repeat;
+	width: 24rem;
+	height: 3rem;
 }
