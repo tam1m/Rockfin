@@ -640,9 +640,9 @@ h2 {
 	background-color: transparent;
 	transition: background-color var(--t-quick) ease;
 }
-.card:hover .coveredImage::before {
+/* .card:hover .coveredImage::before {
 	background-color: hsla(var(--hsl-darken), var(--o-darken));
-}
+} */
 
 /* adjust card "hitbox" so there is less clickable empty space */
 
