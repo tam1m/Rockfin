@@ -29,3 +29,7 @@
 .slide>.button-container>.detail-button:after {
 	display: none;
 }
+
+#slides-container .backdrop.animate {
+	animation: frostedGlass 0.8s ease-in-out;
+}
