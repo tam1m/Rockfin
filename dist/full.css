@@ -2218,6 +2218,10 @@ ANIMATIONS
 .slide>.button-container>.detail-button:after {
 	display: none;
 }
+
+#slides-container .backdrop.animate {
+	animation: frostedGlass 0.8s ease-in-out;
+}
 /* NEXT UP */
 /* assumes that there is only one more "next up" item because when would there ever be multiple?.... */
 
